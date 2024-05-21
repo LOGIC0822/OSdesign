@@ -1,0 +1,171 @@
+@article{10.1145/358699.358703,
+  author     = {Stonebraker, Michael},
+  title      = {Operating system support for database management},
+  year       = {1981},
+  issue_date = {July 1981},
+  publisher  = {Association for Computing Machinery},
+  address    = {New York, NY, USA},
+  volume     = {24},
+  number     = {7},
+  issn       = {0001-0782},
+  url        = {https://doi.org/10.1145/358699.358703},
+  doi        = {10.1145/358699.358703},
+  abstract   = {Several operating system services are examined with a view toward their applicability to support of database management functions. These services include buffer pool management; the file system; scheduling, process management, and interprocess communication; and consistency control.},
+  journal    = {Commun. ACM},
+  month      = {jul},
+  pages      = {412–418},
+  numpages   = {7},
+  keywords   = {scheduling, operating systems, interprocess communication, file systems, database management, buffer management}
+}
+
+@article{10.1145/850726.850729,
+  author     = {Traiger, Irving L.},
+  title      = {Virtual memory management for database systems},
+  year       = {1982},
+  issue_date = {October 1982},
+  publisher  = {Association for Computing Machinery},
+  address    = {New York, NY, USA},
+  volume     = {16},
+  number     = {4},
+  issn       = {0163-5980},
+  url        = {https://doi.org/10.1145/850726.850729},
+  doi        = {10.1145/850726.850729},
+  abstract   = {Over the last several years, a number of hardware and software systems have been developed which map entire files directly into the virtual memory address spaces used by programs. Since all file contents are directly addressable, there is no need for a programmer to issue explicit file system actions, such as Read or Write. In addition, all of the buffer management problems are eliminated, since programmers do not have to squeeze pieces of large files into small virtual spaces. Although these advantages are tempting, we find that database systems have gone their own way. In this paper, we will look at two particular approaches to database system design, and see how (and why) they interface to file systems as they do. We will then look at the potential advantages and implications of working more closely with virtual memory management, and describe some of the functions and constraints that would have to be supported by a generalized page manager.},
+  journal    = {SIGOPS Oper. Syst. Rev.},
+  month      = {oct},
+  pages      = {26–48},
+  numpages   = {23}
+}
+
+@inproceedings{10.1007/978-3-030-71055-2_1,
+  author    = {Cafarella, Michael
+               and DeWitt, David
+               and Gadepally, Vijay
+               and Kepner, Jeremy
+               and Kozyrakis, Christos
+               and Kraska, Tim
+               and Stonebraker, Michael
+               and Zaharia, Matei},
+  editor    = {Gadepally, Vijay
+               and Mattson, Timothy
+               and Stonebraker, Michael
+               and Kraska, Tim
+               and Wang, Fusheng
+               and Luo, Gang
+               and Kong, Jun
+               and Dubovitskaya, Alevtina},
+  title     = {A Polystore Based Database Operating System (DBOS)},
+  booktitle = {Heterogeneous Data Management, Polystores, and Analytics for Healthcare},
+  year      = {2021},
+  publisher = {Springer International Publishing},
+  address   = {Cham},
+  pages     = {3--24},
+  abstract  = {Current operating systems are complex systems that were designed before today's computing environments. This makes it difficult for them to meet the scalability, heterogeneity, availability, and security challenges in current cloud and parallel computing environments. To address these problems, we propose a radically new OS design based on data-centric architecture: all operating system state should be represented uniformly as database tables, and operations on this state should be made via queries from otherwise stateless tasks. This design makes it easy to scale and evolve the OS without whole-system refactoring, inspect and debug system state, upgrade components without downtime, manage decisions using machine learning, and implement sophisticated security features. We discuss how a database OS (DBOS) can improve the programmability and performance of many of today's most important applications and propose a plan for the development of a DBOS proof of concept.},
+  isbn      = {978-3-030-71055-2}
+}
+
+@article{10.14778/3485450.3485454,
+  author     = {Skiadopoulos, Athinagoras and Li, Qian and Kraft, Peter and Kaffes, Kostis and Hong, Daniel and Mathew, Shana and Bestor, David and Cafarella, Michael and Gadepally, Vijay and Graefe, Goetz and Kepner, Jeremy and Kozyrakis, Christos and Kraska, Tim and Stonebraker, Michael and Suresh, Lalith and Zaharia, Matei},
+  title      = {DBOS: a DBMS-oriented operating system},
+  year       = {2021},
+  issue_date = {September 2021},
+  publisher  = {VLDB Endowment},
+  volume     = {15},
+  number     = {1},
+  issn       = {2150-8097},
+  url        = {https://doi.org/10.14778/3485450.3485454},
+  doi        = {10.14778/3485450.3485454},
+  abstract   = {This paper lays out the rationale for building a completely new operating system (OS) stack. Rather than build on a single node OS together with separate cluster schedulers, distributed filesystems, and network managers, we argue that a distributed transactional DBMS should be the basis for a scalable cluster OS. We show herein that such a database OS (DBOS) can do scheduling, file management, and inter-process communication with competitive performance to existing systems. In addition, significantly better analytics can be provided as well as a dramatic reduction in code complexity through implementing OS services as standard database queries, while implementing low-latency transactions and high availability only once.},
+  journal    = {Proc. VLDB Endow.},
+  month      = {sep},
+  pages      = {21–30},
+  numpages   = {10}
+}
+
+@article{DBLP:journals/corr/abs-2105-02418,
+  author     = {Ziniu Wu and
+                Peilun Yang and
+                Pei Yu and
+                Rong Zhu and
+                Yuxing Han and
+                Yaliang Li and
+                Defu Lian and
+                Kai Zeng and
+                Jingren Zhou},
+  title      = {A Unified Transferable Model for ML-Enhanced {DBMS}},
+  journal    = {CoRR},
+  volume     = {abs/2105.02418},
+  year       = {2021},
+  url        = {https://arxiv.org/abs/2105.02418},
+  eprinttype = {arXiv},
+  eprint     = {2105.02418},
+  timestamp  = {Thu, 19 Oct 2023 11:19:36 +0200},
+  biburl     = {https://dblp.org/rec/journals/corr/abs-2105-02418.bib},
+  bibsource  = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{10.14778/2536354.2536355,
+  author     = {Liu, Xin and Salem, Kenneth},
+  title      = {Hybrid storage management for database systems},
+  year       = {2013},
+  issue_date = {June 2013},
+  publisher  = {VLDB Endowment},
+  volume     = {6},
+  number     = {8},
+  issn       = {2150-8097},
+  url        = {https://doi.org/10.14778/2536354.2536355},
+  doi        = {10.14778/2536354.2536355},
+  abstract   = {The use of flash-based solid state drives (SSDs) in storage systems is growing. Adding SSDs to a storage system not only raises the question of how to manage the SSDs, but also raises the question of whether current buffer pool algorithms will still work effectively. We are interested in the use of hybrid storage systems, consisting of SSDs and hard disk drives (HDDs), for database management. We present cost-aware replacement algorithms, which are aware of the difference in performance between SSDs and HDDs, for both the DBMS buffer pool and the SSDs. In hybrid storage systems, the physical access pattern to the SSDs depends on the management of the DBMS buffer pool. We studied the impact of buffer pool caching policies on SSD access patterns. Based on these studies, we designed a cost-adjusted caching policy to effectively manage the SSD. We implemented these algorithms in MySQL's InnoDB storage engine and used the TPC-C workload to demonstrate that these cost-aware algorithms outperform previous algorithms.},
+  journal    = {Proc. VLDB Endow.},
+  month      = {jun},
+  pages      = {541–552},
+  numpages   = {12}
+}
+
+@article{10.14778/2536360.2536361,
+  author = {Murphy, Nick and Tonkelowitz, Mark and Vernal, Mike},
+  year = {2002},
+  month = {04},
+  journal={},
+  pages = {},
+  title = {The Design and Implementation of the Database File System}
+}
+
+@article{Kossmann2022,
+    author    = {Kossmann, Jan and Papenbrock, Thorsten and Naumann, Felix},
+    title     = {Data dependencies for query optimization: a survey},
+    journal   = {The VLDB Journal},
+    year      = {2022},
+    volume    = {31},
+    number    = {1},
+    pages     = {1--22},
+    abstract  = {Effective query optimization is a core feature of any database management system. While most query optimization techniques make use of simple metadata, such as cardinalities and other basic statistics, other optimization techniques are based on more advanced metadata including data dependencies, such as functional, uniqueness, order, or inclusion dependencies. This survey provides an overview, intuitive descriptions, and classifications of query optimization and execution strategies that are enabled by data dependencies. We consider the most popular types of data dependencies and focus on optimization strategies that target the optimization of relational database queries. The survey supports database vendors to identify optimization opportunities as well as DBMS researchers to find related work and open research questions.},
+    doi       = {10.1007/s00778-021-00676-3},
+    issn      = {0949-877X},
+    url       = {https://doi.org/10.1007/s00778-021-00676-3},
+}
+
+@misc{geeksforgeeks,
+  author       = {GeeksforGeeks},
+  title        = {Advanced Query Optimization in DBMS},
+  howpublished = {\url{https://www.geeksforgeeks.org/advanced-query-optimization-in-dbms/}},
+  year         = {2024},
+  date         = {March.18th},
+  note         = {Accessed: \today}
+}
+
+@INPROCEEDINGS{5641312,
+  author={Suei, Pei-Lun and Kuo, Che-Wei and Luoh, Ren-Shan and Kuo, Tai-Wei and Shih, Chi-Sheng and Liang, Min-Siong},
+  booktitle={2010 IEEE 15th Conference on Emerging Technologies \& Factory Automation (ETFA 2010)}, 
+  title={Data compression and query for large scale sensor data on COTS DBMS}, 
+  year={2010},
+  volume={},
+  number={},
+  pages={1-8},
+  abstract={Multi-dimensional temporal data set is the common format in sensor network applications to store sampled temporal data. As time goes on, the size of the core tables in the data set may increase to enormous size and the tables become not managable. In order to reduce storage space and allow on-line query, how to trade off data compression effectiveness for on-line query performance is a challenge issue. In this paper, we are concerned with an effective framework for temporal data set that does not scarify on-line query performance and is specifically designed for very large sensor network database. The sampled data are compressed using several candidate approaches including dictionary-base compress and lossless vector quantization. In the mean time, on-line queries are conducted without decompressing the compressed data set so as to enhance the query performance. Experiments are conducted on a power meter database and sonoma database to evaluate the proposed methodologies in terms of data compression rate and data query speed. The results show that the compression rate ranges from 70% for numerical data to 20% for character data. In the mean time, the increased overhead for online query is limited up to 2%.},
+  keywords={Servers;Data compression;Database systems;Real time systems;Books;Remote sensing;Data Compression;sensor network;sensor network applications},
+  doi={10.1109/ETFA.2010.5641312},
+  ISSN={1946-0759},
+  month={Sep.}
+  }
+

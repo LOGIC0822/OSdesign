@@ -1,0 +1,54 @@
+\begin{thebibliography}{10}
+
+\bibitem{10.1007/978-3-030-71055-2_1}
+Michael Cafarella, David DeWitt, Vijay Gadepally, Jeremy Kepner, Christos Kozyrakis, Tim Kraska, Michael Stonebraker, and Matei Zaharia.
+\newblock A polystore based database operating system (dbos).
+\newblock In Vijay Gadepally, Timothy Mattson, Michael Stonebraker, Tim Kraska, Fusheng Wang, Gang Luo, Jun Kong, and Alevtina Dubovitskaya, editors, {\em Heterogeneous Data Management, Polystores, and Analytics for Healthcare}, pages 3--24, Cham, 2021. Springer International Publishing.
+
+\bibitem{geeksforgeeks}
+GeeksforGeeks.
+\newblock Advanced query optimization in dbms.
+\newblock \url{https://www.geeksforgeeks.org/advanced-query-optimization-in-dbms/}, 2024.
+\newblock Accessed: \today.
+
+\bibitem{Kossmann2022}
+Jan Kossmann, Thorsten Papenbrock, and Felix Naumann.
+\newblock Data dependencies for query optimization: a survey.
+\newblock {\em The VLDB Journal}, 31(1):1--22, 2022.
+
+\bibitem{10.14778/2536354.2536355}
+Xin Liu and Kenneth Salem.
+\newblock Hybrid storage management for database systems.
+\newblock {\em Proc. VLDB Endow.}, 6(8):541–552, jun 2013.
+
+\bibitem{10.14778/2536360.2536361}
+Nick Murphy, Mark Tonkelowitz, and Mike Vernal.
+\newblock The design and implementation of the database file system.
+\newblock 04 2002.
+
+\bibitem{10.14778/3485450.3485454}
+Athinagoras Skiadopoulos, Qian Li, Peter Kraft, Kostis Kaffes, Daniel Hong, Shana Mathew, David Bestor, Michael Cafarella, Vijay Gadepally, Goetz Graefe, Jeremy Kepner, Christos Kozyrakis, Tim Kraska, Michael Stonebraker, Lalith Suresh, and Matei Zaharia.
+\newblock Dbos: a dbms-oriented operating system.
+\newblock {\em Proc. VLDB Endow.}, 15(1):21–30, sep 2021.
+
+\bibitem{10.1145/358699.358703}
+Michael Stonebraker.
+\newblock Operating system support for database management.
+\newblock {\em Commun. ACM}, 24(7):412–418, jul 1981.
+
+\bibitem{5641312}
+Pei-Lun Suei, Che-Wei Kuo, Ren-Shan Luoh, Tai-Wei Kuo, Chi-Sheng Shih, and Min-Siong Liang.
+\newblock Data compression and query for large scale sensor data on cots dbms.
+\newblock In {\em 2010 IEEE 15th Conference on Emerging Technologies \& Factory Automation (ETFA 2010)}, pages 1--8, Sep. 2010.
+
+\bibitem{10.1145/850726.850729}
+Irving~L. Traiger.
+\newblock Virtual memory management for database systems.
+\newblock {\em SIGOPS Oper. Syst. Rev.}, 16(4):26–48, oct 1982.
+
+\bibitem{DBLP:journals/corr/abs-2105-02418}
+Ziniu Wu, Peilun Yang, Pei Yu, Rong Zhu, Yuxing Han, Yaliang Li, Defu Lian, Kai Zeng, and Jingren Zhou.
+\newblock A unified transferable model for ml-enhanced {DBMS}.
+\newblock {\em CoRR}, abs/2105.02418, 2021.
+
+\end{thebibliography}
