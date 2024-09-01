@@ -912,7 +912,7 @@ int cmd_make_file(tcp_buffer *write_buf, char *args, int len) {  // done
         return 0;
     }
     if (strlen(filename) > 16) {
-        send_to_buffer(write_buf, "The file name is too long! \n>$", 31);
+        send_to_buffer(write_buf, "The file's name is too long! \n>$", 31);
         return 0;
     }
     inode inode_ = current_path;
@@ -923,8 +923,7 @@ int cmd_make_file(tcp_buffer *write_buf, char *args, int len) {  // done
                                                     inode_.i_dir_inode[i][1]);
             if (strcmp(inode_new.i_filename, filename) == 0 &&
                 inode_new.i_type == 1) {
-                send_to_buffer(write_buf, "The file is already exist! \n>$",
-                               31);
+                send_to_buffer(write_buf, "The file already exists! \n>$", 31);
                 return 0;
             }
         }
@@ -985,7 +984,7 @@ int cmd_make_dir(tcp_buffer *write_buf, char *args, int len) {  // done
                                                     inode_.i_dir_inode[i][1]);
             if (strcmp(inode_new.i_filename, dirname) == 0 &&
                 inode_new.i_type == 0) {
-                send_to_buffer(write_buf, "The directory is already exist!\n>$",
+                send_to_buffer(write_buf, "The directory already exists!\n>$",
                                35);
                 return 0;
             }

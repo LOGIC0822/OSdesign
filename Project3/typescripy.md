@@ -4,7 +4,7 @@ Use
 make
 ```
 in each directory (named step1 and step2(3)) or just in the root directory,
-executables `BDS`, `BDC_command`, `BDC_random` in step1 and `FS`, `FC` in step2(3) will be made out in the corresponding directories. You can `cd step1` for example and test each program.
+executables `BDS`, `BDC_command`, `BDC_random` in step1 and `FS`, `FC` in step2(3) will be made out in the corresponding directories. You can `cd step1` for example and test each step.
 
 
 # step1
@@ -17,27 +17,31 @@ executables `BDS`, `BDC_command`, `BDC_random` in step1 and `FS`, `FC` in step2(
 ./BDC_command 10356
 
 ```
-For example, as a command client, we implement the BDC_command and we set the port as 10356, disk-like file name as kk.txt, 128 cylinders and 128 sectord per cylinder.
-Then we input such orders:
+For example, as a command client, we implement the BDC_command, set the port as 10356, disk-like file name as kk.txt, 128 cylinders and 128 sectors per cylinder.
+Then we input orders below:
 ```shell
 I
 R 0 0
 W 0 0  5 ttttt
 R 0 0 
 ```
-The program will print following message:
+The following message will be printed on the screen:
 ```
 128 128
 
 Yes
 ttttt
 ```
+
+
+
+Then we can also try the random-command client, we can use following order to set 10 random orders, then we will see output as follows:
+
 ``` shell
 ./BDC_random <num of random orders> <port>
 
 ./BDC_random 10 10356
 ```
-Then we can also try the random-command client, we can set 10 orders, then we will see output as follows:
 
 ```
 cylinders: 128, sectors_per_cylinder: 128, instructions: 10
@@ -64,31 +68,38 @@ W 26 64 256 ji}$VBj1(D>;@c$ <TCJJ4I(;cx8c.(l47NfRepvI4
 Yes
 ```
 
-In the output message, we can see both orders and the responses of the server.Because the number of cylinders and sectors are too big that 10 orders can't make a read order read anything actually.
+In the output message, at first we can see the parameters of the random server(the number of cylinders and sectors are default, the number of orders are setted in the order). Then, we can see both orders and the responses of the server.Because the number of cylinders and sectors are too big that just 10 orders can't read every sector actually.
 
 # step2
 ## Usage
-Firstly start the disk server:
+First,  start the disk server:
+
 ```shell
 ./BDS kk.txt 128 128 2 10356
 ```
 
 Then use FS as a client:
+
 ```shell
 ./FS 127.0.0.1 10356 12356
 ```
 Here we set 12356 as the new file system port for FC to connect.
 
-After connecting, we can use format order to initialize the file system.
+```shell
+./FC 127.0.0.1 12356
+```
 
-We can input as follows:
+After connecting, we can use `format` order to initialize the file system.
+
+We can input orders as follows:
 ```
 f
 mkdir dir1
 mk file1
 ```
 
-You can see conresponding and your inputs as follows:
+You can see corresponding reply as well as your inputs as follows:
+
 ```shell
 f
 Format the disk successfully!
@@ -100,19 +111,23 @@ mk file1
 Create file successfully! 
 >$
 ```
-The">$" is an indicator that inform you that you can continue your input. 
+
+The">$" is an indicator informing you that you can continue your input. 
 
 Then use command
+
 ```shell
 ls
 ```
-The output would be 
+The output would be like:
+
 ```shell
 #dir1
  file1
 >$
  ```
-because I use '#' to show which is a directory for I allow the file and directory with the same name, and also it can make change path to another directory easy.
+
+I use '#' to label the directories because I allow a file and a directory having the same name, which can make changing path to another directory easily.
 
 You can use following orders to check if the file or directory is deleted successfully.
 
@@ -126,6 +141,7 @@ ls
 ```
 
 You will see that 
+
 ```shell
 rm file1
 Remove file successfully! 
@@ -139,14 +155,14 @@ Remove directory successfully!
 ls
 >$
 mkdir dir
-Create file successfully! 
+Create directory successfully! 
 >$
 ls
 # dir
 >$
 ```
 
-And following orders to check `cd`, `pwd`, `w`, `i`,`cat`,  `r`, `i`, `stat` and `shocc`:
+And following orders are for checking `cd`, `pwd`, `w`, `i`,`cat`, `r`, `d`, `stat` and `shocc`:
 
 ```shell
 shocc 0
@@ -238,14 +254,15 @@ The file last change time is Fri May 31 23:07:47 2024
 The file locates at 1 cylinder 2 sector
 >$
 ```
-First, the data we input is longer than 5, so only 5 data can be write in file. And also the `root` will be hided in the son directories. We can find that the output are all legal so the implement of these orders are correct! 
+In the `w` order, we set the maximum length of data is 5, however, the data we input is longer than 5, so only 5 letters can be writen in the file. Besides, the `root` will be hided in the son directories. We can find that the output are all legal so the implement of these orders are correct! 
 
-We can know the block occupancy easily by `shocc`!
+We can see the block occupancy easily by `shocc` order!
 
 # step3
-The step3 : Multi-user is implemented by just changing a bit code in step 2 so I have not create new file at all. So the usage is the same as step2.
+The step3 : Multi-user is implemented by just changing a bit code in step2,  so I have not created any new file at all. So the usage is the same as step2.
 
 We can try following inputs:
+
 ```shell
 userls
 adduser test
@@ -308,13 +325,13 @@ pwd
 /dir/
 >$
 ```
-In this test, first we check the user list. Then we add a new user `test`, and try to create a new "root" directory. By checking the path we can find that we succeed.
-Then in this new root, we create a new directory `dir`. Then we change into it, then the path change into dir, too, which indicates that the new root directory "test" is really a new root because it will be hided when we are in its son directory. Then we change into another user's own root in the user list we saw at first `qzdlogic`.
-In "qzdlogic", we can't find "dir" any more which indicates that it is a whole new root directory!
+In this test, firstly we check the user list. Then we add a new user `test`, and try to create a new "root" directory. By checking the path we can find that we succeed.
+Then in this new root, we create a new directory `dir`. Then we change current path into it, which indicates that the new root directory "test" is really a new root because it will be hided when we are in its son directory. Then we change into another user's own root in the user list we saw at first `qzdlogic`.
+In "qzdlogic", we can't find "dir" any more which indicates that it is a brand new root directory!
 
 To sum up, my toy file system has achieved all the mentioned orders and multi-user task!
 
-Here I want to say thanks to my teacher and all TAs. Without the socket-example provided by you, I can't finish project in such a hurry term!
+Here I want to say thanks to my teacher and all TAs. Without the socket-example provided by them, I can't finish project in such a hurry term!
 
 
 
